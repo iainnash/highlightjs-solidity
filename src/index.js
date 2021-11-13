@@ -8,13 +8,7 @@
  * @since:   2016-07-01
  */
 
-const solidityGrammar = require("./languages/solidity.js");
-const yulGrammar = require("./languages/yul.js");
+const solidity = require("./languages/solidity");
+const yul = require("./languages/yul");
 
-module.exports = function(hljs) {
-    hljs.registerLanguage('solidity', solidityGrammar);
-    hljs.registerLanguage('yul', yulGrammar);
-};
-
-module.exports.solidity = solidityGrammar;
-module.exports.yul = yulGrammar;
+module.exports = { solidity, yul };

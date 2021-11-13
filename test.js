@@ -1,10 +1,11 @@
 const assert = require('assert');
 const parse5 = require('parse5');
 
-const hljs = require('highlightjs');
-const defineSolidity = require('.');
+const hljs = require('highlight.js');
+const {solidity, yul} = require('.');
 
-defineSolidity(hljs);
+hljs.registerLanguage('solidity', solidity)
+hljs.registerLanguage('yul', yul)
 
 // Receives a Solidity snippet and returns an array of [type, text] tuples.
 // Type is the detected token type, and text the corresponding source text.
